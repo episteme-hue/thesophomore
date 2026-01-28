@@ -13,13 +13,13 @@ import ThemeToggle from "./ThemeToggle.astro";
       id="nav-toggle"
       aria-label="Toggle navigation"
       aria-pressed="false"
-      class="md:hidden text-s 2xl:text-lg text-base-900 hover:text-base-500 font-bold uppercase"
+      class="md:hidden text-base 2xl:text-lg text-base-900 hover:text-base-500 font-bold uppercase"
     >
       Menu
     </button>
 
     <div
-      class="hidden md:flex items-center gap-4 text-s 2xl:text-lg text-base-900 hover:text-base-500 font-bold uppercase"
+      class="hidden md:flex items-center gap-4 text-base 2xl:text-lg text-base-900 hover:text-base-500 font-bold uppercase"
     >
       <HeaderLink href="/">Home</HeaderLink>
       <HeaderLink href="/blog">
@@ -27,31 +27,31 @@ import ThemeToggle from "./ThemeToggle.astro";
       </HeaderLink>
       <HeaderLink href="/about">About</HeaderLink>
 
-      <SearchModal class="text-s 2xl:text-lg text-base-900 hover:text-base-500 font-bold uppercase" />
+      <SearchModal class="text-base 2xl:text-lg text-base-900 hover:text-base-500 font-bold uppercase" />
 
       <button
         id="debug-toggle"
         aria-label="Toggle debug borders"
         aria-pressed="false"
-        class="text-s 2xl:text-lg text-base-900 hover:text-base-500 font-bold uppercase"
+        class="text-base 2xl:text-lg text-base-900 hover:text-base-500 font-bold uppercase"
       >
         Grid
       </button>
-      <ThemeToggle class="text-s 2xl:text-lg text-base-900 hover:text-base-500 font-bold uppercase" />
+      <ThemeToggle class="text-base 2xl:text-lg text-base-900 hover:text-base-500 font-bold uppercase" />
     </div>
 
     <!-- Mobile modal menu (brutalist, simple) -->
     <div id="mobile-nav" role="dialog" aria-label="Mobile navigation" aria-hidden="true" style="display:none;" class="fixed inset-0 z-[1000] p-8 overflow-auto bg-[var(--color-paper)] text-[var(--color-ink)]">
-      <button id="mobile-close" aria-label="Close navigation" style="position:absolute;right:1rem;top:1rem;" class="text-s 2xl:text-lg font-bold uppercase">Close</button>
-      <div class="flex flex-col gap-2 items-start text-s 2xl:text-lg hover:text-base-500 font-bold uppercase">
+      <button id="mobile-close" aria-label="Close navigation" style="position:absolute;right:1rem;top:1rem;" class="text-base 2xl:text-lg font-bold uppercase">Close</button>
+      <div class="flex flex-col gap-2 items-start text-base 2xl:text-lg hover:text-base-500 font-bold uppercase">
         <HeaderLink href="/">Home</HeaderLink>
         <HeaderLink href="/blog">
           FEED <span class="font-normal">NOW</span>! YOUR <span class="font-normal">NOW</span>! HEAD <span class="font-normal">NOW</span>!
         </HeaderLink>
         <HeaderLink href="/about">About</HeaderLink>
-        <SearchModal class="text-s 2xl:text-lg hover:text-base-500 font-bold uppercase" />
-        <button id="mobile-debug" aria-label="Toggle debug borders" class="text-s 2xl:text-lg hover:text-base-500 font-bold uppercase">Grid</button>
-        <ThemeToggle class="text-s 2xl:text-lg hover:text-base-500 font-bold uppercase" />
+        <SearchModal class="text-base 2xl:text-lg hover:text-base-500 font-bold uppercase" />
+        <button id="mobile-debug" aria-label="Toggle debug borders" class="text-base 2xl:text-lg hover:text-base-500 font-bold uppercase">Grid</button>
+        <ThemeToggle class="text-base 2xl:text-lg hover:text-base-500 font-bold uppercase" />
       </div>
     </div>
   </nav>
