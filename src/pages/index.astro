@@ -6,7 +6,6 @@ import SectionList from "../components/SectionList.astro";
 
 import { getCollection } from "astro:content";
 import { getSite } from '../utils/consts';
-import ProjectList from '../components/ProjectList.astro';
 import Social from '../components/Social.astro';
 
 const cv = (await getCollection("cv" as any)) as any[];
@@ -30,12 +29,6 @@ const site = await getSite();
 		heading="Blog"
 		limit={3}
 		viewAllHref="/blog"
-	/>
-
-	<ProjectList
-		heading="Projects"
-		limit={4}
-		viewAllHref="/projects"
 	/>
 
 	<Social class="mt-0" />
