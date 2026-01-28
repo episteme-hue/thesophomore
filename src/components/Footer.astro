@@ -1,6 +1,8 @@
 ---
 import { getSite } from '../utils/consts';
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import SophomoreMark from '../assets/sophomore.png';
 
 import { Icon } from 'astro-icon/components'
 import Clock from './Clock.astro';
@@ -26,6 +28,13 @@ const iconMap: Record<string, string> = {
     </div>
     <div class="grid gap-6 pt-8 pb-4 md:flex md:items-center md:justify-between">
       <p class="text-sm text-muted m-0">{site.title} &copy; {today.getFullYear()}. All rights reserved.</p>
+      <Image
+        src={SophomoreMark}
+        alt="The Sophomore"
+        width={64}
+        height={64}
+        class="mx-auto md:mx-0 h-8 w-auto opacity-90"
+      />
       <div class="md:text-right space-y-2 md:space-y-1">
         <div class="flex flex-wrap items-center gap-3 md:justify-end">
           <p class="text-2xl sm:text-3xl font-semibold tracking-tight text-ink m-0">Granville</p>
