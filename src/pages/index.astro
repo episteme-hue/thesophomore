@@ -10,6 +10,7 @@ import ProjectList from '../components/ProjectList.astro';
 import Social from '../components/Social.astro';
 
 const cv = (await getCollection("cv" as any)) as any[];
+const hiddenCvSections = new Set(['education', 'teaching', 'speaking']);
 
 const site = await getSite();
 ---
@@ -42,6 +43,7 @@ const site = await getSite();
 	            <!-- Sections (from src/content/sections.yml) -->
             {
                 cv.map((section) => {
+					if (hiddenCvSections.has(section.id)) return null;
                     if (section.data.items) {
                         return (
                             <SectionList
