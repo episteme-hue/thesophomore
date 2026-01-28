@@ -15,25 +15,14 @@ const site = await getSite();
 ---
 
 <PageLayout
-	title={site.author.name || 'Dasein'}
+	title={site.author.name || 'The Sophomore'}
 >
 	<Hero
-		title={site.author.name || 'Dasein'}
-		description={site.author.bio || 'Welcome to my personal website.'}
+		title={site.author.name || 'The Sophomore'}
+		description={site.author.bio || 'The sophomore is Denison’s community-facing publication for the promotion and circulation of philosophical thought. We invite you to critique, discuss, and share the work you find here.'}
 		role={site.author.role}
 		location={site.author.location}
-		actions={[
-			{ label: 'View Blog', href: '/blog' },
-			{ label: 'Get Quote', href: '/contact' },
-		]}
-	/>
 
-	<Social class="mt-8" />
-
-	<ProjectList
-		heading="Projects"
-		limit={4}
-		viewAllHref="/projects"
 	/>
 
 	<PostList
@@ -41,6 +30,14 @@ const site = await getSite();
 		limit={3}
 		viewAllHref="/blog"
 	/>
+
+	<ProjectList
+		heading="Projects"
+		limit={4}
+		viewAllHref="/projects"
+	/>
+
+	<Social class="mt-0" />
 
 	            <!-- Sections (from src/content/sections.yml) -->
             {

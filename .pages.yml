@@ -34,9 +34,6 @@ content:
         label: Published
         type: date
         required: true
-      - name: updatedDate
-        label: Updated
-        type: date
       - name: heroImage
         label: Hero image
         type: image

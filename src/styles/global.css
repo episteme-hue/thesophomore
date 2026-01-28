@@ -286,3 +286,22 @@
 		line-height: 1.2;
 	}
 }
+
+@layer utilities {
+	/* Override Tailwind Typography link color so citations aren’t white. */
+	.prose :where(a):not(:where(.not-prose, .not-prose *)) {
+		color: inherit !important;
+		text-decoration: underline;
+		text-underline-offset: 0.18em;
+		text-decoration-thickness: 1px;
+	}
+
+	.prose :where(a):not(:where(.not-prose, .not-prose *)):visited {
+		color: inherit !important;
+	}
+
+	.prose :where(a):not(:where(.not-prose, .not-prose *)):hover {
+		color: inherit !important;
+		text-decoration-thickness: 2px;
+	}
+}

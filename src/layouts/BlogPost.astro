@@ -9,14 +9,14 @@ import { slugify, withBase } from '../utils/slugify';
 interface Props {
 	title: string;
 	description: string;
+	author?: string;
 	pubDate: Date;
-	updatedDate?: Date;
     heroImage?: ImageMetadata;
     Content?: any;
     tags?: string[];
 }
 
-const { title, description, pubDate, updatedDate, heroImage, tags = [], Content } = Astro.props as Props;
+const { title, description, author, pubDate, updatedDate, heroImage, tags = [], Content } = Astro.props as Props;
 ---
 
 <BaseLayout title={title} description={description} image={heroImage}>
@@ -27,11 +27,11 @@ const { title, description, pubDate, updatedDate, heroImage, tags = [], Content 
             <h1>{title}</h1>
             <p class="post-meta">
                 <FormattedDate date={pubDate} />
-                {updatedDate && (
-                    <span>
-                        &middot; Updated <FormattedDate date={updatedDate} />
-                    </span>
-                )}
+				{author && (
+					<span>
+						&nbsp;&middot;&nbsp;By {author}
+					</span>
+				)}
             </p>
                 {tags.length > 0 && (
                     <ul class="mt-2 flex flex-wrap gap-2 text-sm text-muted">
