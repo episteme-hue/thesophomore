@@ -48,7 +48,6 @@ const imageURL = new URL((image as ImageMetadata).src, Astro.site ?? Astro.url);
 	}}
 		extend={{
 		link: [
-			{ rel: 'icon', type: 'image/svg+xml', href: withBase('/favicon.svg') },
 			{ rel: 'icon', type: 'image/png', href: withBase('/lobster-favicon-512.png') },
 			{ rel: 'sitemap', href: withBase('/sitemap-index.xml') },
 			{ rel: 'alternate', type: 'application/rss+xml', title: site.title, href: withBase('/rss.xml') },
