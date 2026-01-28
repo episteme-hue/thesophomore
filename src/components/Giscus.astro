@@ -1,0 +1,62 @@
+---
+// Giscus comments widget (one discussion per page)
+export interface Props {
+  class?: string;
+}
+
+const { class: className = "" } = Astro.props as Props;
+---
+
+<div class={className}>
+  <div class="giscus" data-giscus-container></div>
+
+  <script is:inline>
+    const GISCUS_ORIGIN = "https://giscus.app";
+
+    const getTheme = () =>
+      document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+
+    const mount = () => {
+      const container = document.querySelector("[data-giscus-container]");
+      if (!container) return;
+
+      // Avoid double-injecting if Astro rehydrates/navigates.
+      if (container.querySelector("script[src^='https://giscus.app/client.js']")) return;
+
+      const s = document.createElement("script");
+      s.src = "https://giscus.app/client.js";
+      s.setAttribute("data-repo", "episteme-hue/thesophomore");
+      s.setAttribute("data-repo-id", "R_kgDORCv6eg");
+      s.setAttribute("data-category", "Announcements");
+      s.setAttribute("data-category-id", "DIC_kwDORCv6es4C1hPa");
+      // One discussion per blog post URL path (stable even if title changes)
+      s.setAttribute("data-mapping", "pathname");
+      s.setAttribute("data-strict", "0");
+      s.setAttribute("data-reactions-enabled", "1");
+      s.setAttribute("data-emit-metadata", "0");
+      s.setAttribute("data-input-position", "bottom");
+      s.setAttribute("data-theme", getTheme());
+      s.setAttribute("data-lang", "en");
+      s.crossOrigin = "anonymous";
+      s.async = true;
+      container.appendChild(s);
+    };
+
+    const setGiscusTheme = (theme) => {
+      const iframe = document.querySelector("iframe.giscus-frame");
+      if (!iframe) return;
+      iframe.contentWindow?.postMessage(
+        { giscus: { setConfig: { theme } } },
+        GISCUS_ORIGIN,
+      );
+    };
+
+    // Initial mount
+    mount();
+
+    // Keep giscus theme in sync with the site toggle (data-theme on <html>)
+    const obs = new MutationObserver(() => setGiscusTheme(getTheme()));
+    obs.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  </script>
+</div>
+
