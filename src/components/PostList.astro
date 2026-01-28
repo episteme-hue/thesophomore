@@ -69,7 +69,7 @@ const visiblePosts = typeof limit === "number" ? posts.slice(0, limit) : posts;
                 <h2
                     class="text-sm 2xl:text-xl text-base-900 font-bold uppercase"
                 >
-                    {heading}
+                    {Astro.slots.has('heading') ? <slot name="heading" /> : heading}
                 </h2>
             </div>
 
