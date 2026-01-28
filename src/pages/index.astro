@@ -3,8 +3,6 @@ import PageLayout from '../layouts/PageLayout.astro';
 import Hero from '../components/Hero.astro';
 import PostList from '../components/PostList.astro';
 import SectionList from "../components/SectionList.astro";
-import { Image } from 'astro:assets';
-import SophomoreImage from '../assets/sophomore.png';
 
 import { getCollection } from "astro:content";
 import { getSite } from '../utils/consts';
@@ -26,17 +24,6 @@ const site = await getSite();
 		location={site.author.location}
 
 	/>
-
-	<div class="content-shell py-8">
-		<div class="flex justify-center">
-			<Image
-				src={SophomoreImage}
-				alt="The Sophomore"
-				width={900}
-				class="w-full max-w-2xl h-auto"
-			/>
-		</div>
-	</div>
 
 	<PostList
 		heading="Blog"
