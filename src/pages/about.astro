@@ -1,6 +1,7 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
-import { withBase } from '../utils/slugify';
+import { Image } from 'astro:assets';
+import LobsterFriend from '../assets/lobster-friend.png';
 ---
 
 <PageLayout
@@ -18,11 +19,11 @@ import { withBase } from '../utils/slugify';
 				An on-campus, bi-annual philosophy magazine would allow for substantive popular engagement with philosophy on Denison’s campus, increase Episteme’s visibility, create interorganizational connections, and encourage philosophical thinking and discussion (as is concomitant with Denison’s institutional mission).
 			</p>
 
-			<img
-				src={withBase('/lobster-friend.png')}
+			<Image
+				src={LobsterFriend}
 				alt="Lobster"
-				loading="lazy"
-				class="mt-8 w-70 h-auto"
+				width={512}
+				class="mt-8 w-48 h-auto"
 			/>
 		</div>
 	</section>
