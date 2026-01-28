@@ -1,5 +1,6 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
+import { withBase } from '../utils/slugify';
 ---
 
 <PageLayout
@@ -18,7 +19,7 @@ import PageLayout from '../layouts/PageLayout.astro';
 			</p>
 
 			<img
-				src="/lobster-favicon-512.png"
+				src={withBase('/lobster-favicon-512.png')}
 				alt="Lobster"
 				loading="lazy"
 				class="mt-8 w-70 h-auto"
