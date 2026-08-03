@@ -1,6 +1,6 @@
 ---
 title: "Clamping and Cutting the Landscape: Latour and Burroughs on Delocalized Meaning"
-description: Where is the meaning at?
+description: It's not local. It's not Global. So where is the meaning at?
 pubDate: 2026-01-27
 author: Soren Allen 
 ---
