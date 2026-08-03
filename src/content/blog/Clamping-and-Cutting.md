@@ -5,7 +5,8 @@ pubDate: 2026-01-27
 author: Soren Allen 
 ---
 
-[Originally produced for Junior and Senior Seminar in Philosophy (PHIL	431) taught by Dr. Jonathan Maskit]  
+
+/[Originally produced for Junior and Senior Seminar in Philosophy (PHIL	431) taught by Dr. Jonathan Maskit/]  
 
 Bruno Latour’s Reassembling the Social seeks to flatten, to “clamp” the map of the global and local landscape so that the planes are placed beside each other (174). Instead of assuming an overarching system, Latour prioritizes the process of producing a network. Since everything is produced somewhere, with a variety of conditional influences, Latour demands an acknowledgment of these production sites. The “fragile chain references” that can be traced work to reshape the immediacy of experience, with ceaseless, embedded processes being performed locally and globally, between the micro and macro scales (176). Latour demands a reshuffling of the structural assumptions that we impose on production, one that reemphasizes the local conditions of production that inform the wider connections we make. Thus, the macro no longer describes a wider or a larger site in which the micro would be embedded, but is rather “another equally local, equally micro place, which is connected to many others through some medium transporting specific types of traces” (176). 
 
