@@ -45,6 +45,11 @@ content:
         label: Tags
         type: string
         list: true
+      - name: section
+        label: Section
+        type: select
+        options:
+          values: [topic1, topic2, topic3, topic4]
 
   - name: projects
     label: Projects

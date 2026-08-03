@@ -1,5 +1,6 @@
 import { defineCollection, z } from 'astro:content';
 import { glob, file } from 'astro/loaders';
+import { SECTION_IDS } from './utils/sections';
 
 const blog = defineCollection({
 	// Load Markdown and MDX files in the `src/content/blog/` directory.
@@ -14,6 +15,7 @@ const blog = defineCollection({
 			pubDate: z.coerce.date(),
 			heroImage: image().optional(),
 			tags: z.array(z.string()).default([]),
+      section: z.enum(SECTION_IDS).default('topic1'),
 		}),
 });
 

@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import PageLayout from '../../layouts/PageLayout.astro';
+import PostList from '../../components/PostList.astro';
+import { SECTIONS } from '../../utils/sections';
+import { getSite } from '../../utils/consts';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return SECTIONS.map((section) => ({
+    params: { section: section.id },
+    props: {
+      label: section.label,
+      posts: posts
+        .filter((p) => p.data.section === section.id)
+        .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()),
+    },
+  }));
+}
+
+const { label, posts } = Astro.props;
+const site = await getSite();
+---
+
+<PageLayout title={`${label} · ${site.title}`} description={site.description}>
+  <PostList heading={label} posts={posts} limit={undefined} viewAllHref="/blog/" viewAllLabel="All posts" />
+</PageLayout>
