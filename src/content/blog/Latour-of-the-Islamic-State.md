@@ -1,6 +1,6 @@
 ---
 title: "(La)tour of the Islamic State: Group Formation and Apocalypse"
-description: Oh?
+description: Who is driving this bus? 
 pubDate: 2026-01-27
 author: Landon James
 ---
