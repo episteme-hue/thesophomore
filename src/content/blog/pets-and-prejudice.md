@@ -1,6 +1,6 @@
 ---
 title: Pets and Prejudice, Or What Nonhumans Can Tell Us About Class
-description: ooh la la
+description: Excavating class in Jane Austen. 
 pubDate: 2026-01-15
 author: Apremeya Sudarshan
 ---
