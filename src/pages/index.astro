@@ -7,9 +7,14 @@ import SectionList from "../components/SectionList.astro";
 import { getCollection } from "astro:content";
 import { getSite } from '../utils/consts';
 import Social from '../components/Social.astro';
+import { SECTIONS } from '../utils/sections';
 
 const cv = (await getCollection("cv" as any)) as any[];
 const hiddenCvSections = new Set(['education', 'teaching', 'speaking']);
+
+const allPosts = (await getCollection('blog')).sort(
+	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
 
 const site = await getSite();
 ---
@@ -22,35 +27,37 @@ const site = await getSite();
 		description={site.author.bio || 'The sophomore is Denison’s community-facing publication for the promotion and circulation of philosophical thought. We invite you to critique, discuss, and share the work you find here.'}
 		role={site.author.role}
 		location={site.author.location}
-
 	/>
 
-	<PostList
-		heading="Blog"
-		limit={6}
-		viewAllHref="/blog"
-	>
-		<span slot="heading">
-			FEED <span class="font-normal">NOW</span>! YOUR <span class="font-normal">NOW</span>! HEAD <span class="font-normal">NOW</span>!
-		</span>
-	</PostList>
+	{SECTIONS.map((section) => {
+		const posts = allPosts.filter((p) => p.data.section === section.id);
+		if (posts.length === 0) return null;
+		return (
+			<PostList
+				heading={section.label}
+				posts={posts}
+				limit={3}
+				viewAllHref={`/sections/${section.id}/`}
+				viewAllLabel={`All ${section.label}`}
+			/>
+		);
+	})}
 
 	<Social class="mt-0" />
 
-	            <!-- Sections (from src/content/sections.yml) -->
-            {
-                cv.map((section) => {
-					if (hiddenCvSections.has(section.id)) return null;
-                    if (section.data.items) {
-                        return (
-                            <SectionList
-                                heading={section.data.heading}
-                                items={section.data.items}
-                            />
-                        );
-                    }
-                    return null;
-                })
-            }
-		
+	<!-- Sections (from src/content/sections.yml) -->
+	{
+		cv.map((section) => {
+			if (hiddenCvSections.has(section.id)) return null;
+			if (section.data.items) {
+				return (
+					<SectionList
+						heading={section.data.heading}
+						items={section.data.items}
+					/>
+				);
+			}
+			return null;
+		})
+	}
 </PageLayout>
