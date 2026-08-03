@@ -1,6 +1,6 @@
 ---
 title: "Giving Life to the Depths: Disrupting Binaries and Pushing the Bounds of Subjectivity in Nnedi Okorafor’s Lagoon"
-description: An alternate account of the Atlantic 
+description: An alternate account of first contact.  
 pubDate: 2026-01-27
 author: Landon James
 ---
