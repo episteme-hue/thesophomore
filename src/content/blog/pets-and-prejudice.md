@@ -1,6 +1,6 @@
 ---
 title: Pets and Prejudice, Or What Nonhumans Can Tell Us About Class
-description: Excavating class in Jane Austen. 
+description: Queen Victoria and the "great ass interest." 
 pubDate: 2026-01-15
 author: Apremeya Sudarshan
 ---
