@@ -1,10 +1,11 @@
-![Queen Victoria's Donkey from the _Illustrated London News Historical Archive_ February 2nd, 1901](thesophomore/src/assets/The Queen’s Donkey 2.png)
 ---
 title: Pets and Prejudice, Or What Nonhumans Can Tell Us About Class
-description: Queen Victoria and the "great ass interest." 
+description: 'Queen Victoria and the "great ass interest."'
 pubDate: 2026-01-15
 author: Apremeya Sudarshan
 ---
+
+![Queen Victoria's Donkey from the _Illustrated London News Historical Archive_ February 2nd, 1901](thesophomore/src/assets/queendonkey2.png)
 
 ## §1. Introduction
 
