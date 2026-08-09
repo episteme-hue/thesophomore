@@ -15,7 +15,7 @@ const blog = defineCollection({
 			pubDate: z.coerce.date(),
 			heroImage: image().optional(),
 			tags: z.array(z.string()).default([]),
-      section: z.enum(SECTION_IDS).default('topic1'),
+      section: z.enum(SECTION_IDS).default('responses'),
 		}),
 });
 

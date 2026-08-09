@@ -1,6 +1,7 @@
 ---
 import { getSite } from "../utils/consts";
 import HeaderLink from "./HeaderLink.astro";
+import { SECTIONS } from "../utils/sections";
 
 const site = await getSite();
 import SearchModal from "./SearchModal.astro";
@@ -24,10 +25,9 @@ import ThemeToggle from "./ThemeToggle.astro";
       <HeaderLink href="/">
         FEED <span class="font-normal">NOW</span>! YOUR <span class="font-normal">NOW</span>! HEAD <span class="font-normal">NOW</span>!
       </HeaderLink>
-      <HeaderLink href="/sections/topic1/">Topic One</HeaderLink>
-      <HeaderLink href="/sections/topic2/">Topic Two</HeaderLink>
-      <HeaderLink href="/sections/topic3/">Topic Three</HeaderLink>
-      <HeaderLink href="/sections/topic4/">Topic Four</HeaderLink>
+      {SECTIONS.map((section) => (
+        <HeaderLink href={`/sections/${section.id}/`}>{section.label}</HeaderLink>
+      ))}
       <HeaderLink href="/about">About</HeaderLink>
 
       <SearchModal class="text-base 2xl:text-lg text-base-900 hover:text-base-500 font-bold uppercase" />
@@ -51,6 +51,9 @@ import ThemeToggle from "./ThemeToggle.astro";
         <HeaderLink href="/blog">
           FEED <span class="font-normal">NOW</span>! YOUR <span class="font-normal">NOW</span>! HEAD <span class="font-normal">NOW</span>!
         </HeaderLink>
+        {SECTIONS.map((section) => (
+          <HeaderLink href={`/sections/${section.id}/`}>{section.label}</HeaderLink>
+        ))}
         <HeaderLink href="/about">About</HeaderLink>
         <SearchModal class="text-base 2xl:text-lg hover:text-base-500 font-bold uppercase" />
         <button id="mobile-debug" aria-label="Toggle debug borders" class="text-base 2xl:text-lg hover:text-base-500 font-bold uppercase">Grid</button>

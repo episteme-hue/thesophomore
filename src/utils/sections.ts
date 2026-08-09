@@ -1,8 +1,8 @@
 export const SECTIONS = [
-  { id: 'topic1', label: 'Topic One' },
-  { id: 'topic2', label: 'Topic Two' },
-  { id: 'topic3', label: 'Topic Three' },
-  { id: 'topic4', label: 'Topic Four' },
+  { id: 'responses', label: 'Responses' },
+  { id: 'philosophy', label: 'Philosophy' },
+  { id: 'history', label: 'History' },
+  { id: 'criticism', label: 'Criticism' },
 ] as const;
 
 export type SectionId = (typeof SECTIONS)[number]['id'];
