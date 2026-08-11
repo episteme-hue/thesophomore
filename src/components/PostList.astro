@@ -35,7 +35,7 @@ export interface Props {
 
 let {
     heading = "Blog",
-    posts = [],
+    posts,
     limit = 6,
     viewAllHref,
     viewAllLabel = "View all posts",
@@ -45,13 +45,17 @@ function getPostData(item: RawPost) {
     return item && (item as any).data ? (item as any).data : item;
 }
 
-if (posts.length === 0) {
+// Only fetch all posts when the caller omitted `posts` entirely.
+// An explicit empty array means "no posts for this section" and must stay empty.
+if (posts === undefined) {
     console.warn(
         '[PostList] No posts provided; fetching from "blog" collection.'
     );
-    posts = posts.concat(await getCollection("blog")).sort(
+    posts = (await getCollection("blog")).sort(
         (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
     );
+} else if (!Array.isArray(posts)) {
+    posts = [];
 }
 
 const subpath = import.meta.env.BASE_URL;
